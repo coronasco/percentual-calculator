@@ -1,0 +1,62 @@
+{
+  "name": "Free Percentage Calculator",
+  "short_name": "PctCalc",
+  "description": "Calculate percentages instantly with our free online calculator. What is X% of Y? Find percentage increase, decrease, markup, discount, and compound interest.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["utilities", "productivity", "education"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Percentage Calculator on Desktop"
+    },
+    {
+      "src": "/screenshot-mobile.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Percentage Calculator on Mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Calculate Percentage",
+      "short_name": "Calculate",
+      "description": "Quick access to percentage calculations",
+      "url": "/?action=calculate",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+} 

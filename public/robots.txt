@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://percentagecalculator.com/sitemap.xml
+
+# Additional sitemaps for different content types
+Sitemap: https://percentagecalculator.com/sitemap-calculators.xml 
