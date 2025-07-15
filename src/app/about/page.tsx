@@ -3,12 +3,12 @@ import Link from "next/link";
 import { Calculator, Zap, Shield, Clock, Code } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Our Percentage Calculator - Free Online Tool",
-  description: "Learn about our free percentage calculator. Built with modern web technologies, offering fast, accurate, and private percentage calculations for everyone.",
-  keywords: "about percentage calculator, free calculator, online tool, percentage calculations",
+  title: "About Me & My Percentage Calculator - Free Online Tool",
+  description: "Hi! I'm a developer who built this free percentage calculator because I believe everyone deserves access to reliable tools without privacy concerns.",
+  keywords: "about percentage calculator, developer, free calculator, online tool, percentage calculations",
   openGraph: {
-    title: "About Our Percentage Calculator - Free Online Tool",
-    description: "Learn about our free percentage calculator. Built with modern web technologies, offering fast, accurate, and private percentage calculations.",
+    title: "About Me & My Percentage Calculator - Free Online Tool",
+    description: "Hi! I'm a developer who built this free percentage calculator because I believe everyone deserves access to reliable tools without privacy concerns.",
   },
 };
 
@@ -17,9 +17,9 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">About Our Percentage Calculator</h1>
+          <h1 className="text-4xl font-bold mb-4">About Me & This Calculator</h1>
           <p className="text-xl text-muted-foreground">
-            A free, fast, and accurate online tool for all your percentage calculations
+            Hi there! Let me tell you a bit about myself and why I built this tool.
           </p>
         </div>
 
@@ -27,31 +27,34 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <Calculator className="w-6 h-6" />
-              Our Mission
+              Why I Built This
             </h2>
             <p className="text-muted-foreground mb-4">
-              We believe that mathematical tools should be accessible to everyone. Our percentage calculator 
-              is designed to provide instant, accurate results without any barriers - no registration, 
-              no ads, no tracking.
+              I&apos;m a developer who got frustrated with existing percentage calculators. 
+              They were either cluttered with ads, required accounts, or just didn&apos;t work well. 
+              So I decided to build my own - the calculator I always wanted to use.
             </p>
             <p className="text-muted-foreground">
-              Whether you&apos;re a student, professional, or just need quick percentage calculations, 
-              our tool is here to help you solve problems efficiently and accurately.
+              My philosophy is simple: useful tools should be free, fast, and respect your privacy. 
+              That&apos;s why everything runs locally in your browser - I literally can&apos;t see what you&apos;re calculating, 
+              even if I wanted to (which I don&apos;t).
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <Code className="w-6 h-6" />
-              Built with Modern Tech
+              How I Built It
             </h2>
             <p className="text-muted-foreground mb-4">
-              Our calculator is built using Next.js 14, TypeScript, and TailwindCSS, ensuring 
-              fast performance, reliability, and a great user experience across all devices.
+              I used Next.js 14, TypeScript, and TailwindCSS to create something that&apos;s both 
+              beautiful and functional. The dark mode toggle? That&apos;s because I&apos;m a night owl 
+              and hate bright screens at 2 AM.
             </p>
             <p className="text-muted-foreground">
-              We use client-side calculations to ensure your data never leaves your device, 
-              providing complete privacy and security.
+              Every feature I added is something I actually use. The history? Because I always forget 
+              what I calculated 5 minutes ago. The export? Because sometimes you need to share results 
+              with colleagues.
             </p>
           </div>
         </div>
@@ -61,29 +64,42 @@ export default function AboutPage() {
             <Zap className="w-12 h-12 mx-auto mb-4 text-primary" />
             <h3 className="text-lg font-semibold mb-2">Lightning Fast</h3>
             <p className="text-sm text-muted-foreground">
-              Instant calculations with real-time validation and feedback
+              I optimized every calculation to be instant. No waiting, no loading spinners.
             </p>
           </div>
           <div className="text-center p-6 rounded-lg bg-muted/50">
             <Shield className="w-12 h-12 mx-auto mb-4 text-primary" />
             <h3 className="text-lg font-semibold mb-2">100% Private</h3>
             <p className="text-sm text-muted-foreground">
-              All calculations happen locally - no data sent to servers
+              Your data never leaves your device. I built it this way because that&apos;s how I want my tools to work.
             </p>
           </div>
           <div className="text-center p-6 rounded-lg bg-muted/50">
             <Clock className="w-12 h-12 mx-auto mb-4 text-primary" />
             <h3 className="text-lg font-semibold mb-2">Smart History</h3>
             <p className="text-sm text-muted-foreground">
-              Track your recent calculations with export functionality
+              Tracks your calculations locally so you can reference them later. Export when you need to.
             </p>
           </div>
         </div>
 
+        <div className="bg-muted/50 p-8 rounded-lg mb-12">
+          <h2 className="text-2xl font-semibold mb-4">My Promise to You</h2>
+          <p className="text-muted-foreground mb-4">
+            I built this calculator to be genuinely useful, not to collect data or show ads. 
+            It&apos;s completely free and always will be. If you find it helpful, that&apos;s all the 
+            reward I need.
+          </p>
+          <p className="text-muted-foreground">
+            Have suggestions or found a bug? I&apos;d love to hear from you! I&apos;m always looking 
+            to improve the tool based on real user feedback.
+          </p>
+        </div>
+
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Ready to Calculate?</h2>
+          <h2 className="text-2xl font-semibold mb-4">Ready to Try It Out?</h2>
           <p className="text-muted-foreground mb-6">
-            Start using our free percentage calculator now
+            Give my calculator a spin - I think you&apos;ll like it!
           </p>
           <Link 
             href="/" 

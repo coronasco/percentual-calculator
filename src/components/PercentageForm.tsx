@@ -153,7 +153,7 @@ export default function PercentageForm() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [input1, input2, input3, type]);
+  }, [input1, input2, input3, type, calculate]);
 
   function calculate() {
     const x = parseFloat(input1);
@@ -253,7 +253,7 @@ export default function PercentageForm() {
         setShared(true);
         toast.success("Result shared!");
         setTimeout(() => setShared(false), 1500);
-      } catch (error) {
+      } catch {
         toast.error("Failed to share");
       }
     }
