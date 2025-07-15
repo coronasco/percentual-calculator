@@ -57,6 +57,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/advanced-calculator",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
   images: {

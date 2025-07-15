@@ -102,9 +102,9 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Percentage Calculator",
+            "name": "Advanced Percentage Calculator",
             "description": "Free online percentage calculator for various calculations including markup, discount, and compound interest",
-            "url": "https://percentagecalculator.com",
+            "url": "https://www.advanced-percentage-calculator.com",
             "applicationCategory": "CalculatorApplication",
             "operatingSystem": "Web Browser",
             "offers": {

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://percentagecalculator.com"),
+  metadataBase: new URL("https://www.advanced-percentage-calculator.com"),
   alternates: {
     canonical: "/",
   },
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     title: "Free Percentage Calculator – Fast & Simple Online Tool",
     description:
       "Calculate percentages instantly with our free online calculator. What is X% of Y? Find percentage increase, decrease, markup, discount, and compound interest. No registration required, 100% free and private.",
-    url: "https://percentagecalculator.com",
-    siteName: "Percentage Calculator",
+    url: "https://www.advanced-percentage-calculator.com",
+    siteName: "Advanced Percentage Calculator",
     type: "website",
     locale: "en_US",
     images: [
@@ -110,9 +110,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "Free Percentage Calculator",
+              "name": "Advanced Percentage Calculator",
               "description": "Calculate percentages instantly with our free online calculator. What is X% of Y? Find percentage increase, decrease, markup, discount, and compound interest.",
-              "url": "https://percentagecalculator.com",
+              "url": "https://www.advanced-percentage-calculator.com",
               "applicationCategory": "CalculatorApplication",
               "operatingSystem": "Web Browser",
               "offers": {
@@ -128,15 +128,15 @@ export default function RootLayout({
                 "Calculation history",
                 "Export functionality"
               ],
-              "screenshot": "https://percentagecalculator.com/screenshot.png",
+              "screenshot": "https://www.advanced-percentage-calculator.com/screenshot.png",
               "softwareVersion": "1.0.0",
               "author": {
                 "@type": "Organization",
-                "name": "PercentageCalculator"
+                "name": "Advanced Percentage Calculator"
               },
               "publisher": {
                 "@type": "Organization", 
-                "name": "PercentageCalculator"
+                "name": "Advanced Percentage Calculator"
               }
             }),
           }}

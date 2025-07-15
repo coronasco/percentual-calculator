@@ -1,5 +1,5 @@
 {
-  "name": "Free Percentage Calculator",
+  "name": "Advanced Percentage Calculator",
   "short_name": "PctCalc",
   "description": "Calculate percentages instantly with our free online calculator. What is X% of Y? Find percentage increase, decrease, markup, discount, and compound interest.",
   "start_url": "/",
@@ -35,14 +35,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Percentage Calculator on Desktop"
+      "label": "Advanced Percentage Calculator on Desktop"
     },
     {
       "src": "/screenshot-mobile.png", 
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Percentage Calculator on Mobile"
+      "label": "Advanced Percentage Calculator on Mobile"
     }
   ],
   "shortcuts": [
