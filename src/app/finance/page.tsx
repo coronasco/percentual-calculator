@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { FinanceCalculator } from "@/components/calculators/FinanceCalculator";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { Header } from "@/components/Header";
 import Link from "next/link";
-import { Calculator, DollarSign, TrendingUp, Banknote, Percent, Clock } from "lucide-react";
+import { Calculator, Home } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Finance Calculator - Free Financial Tools for Professionals",
@@ -17,22 +17,7 @@ export const metadata: Metadata = {
 export default function FinancePage() {
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans">
-      {/* Header */}
-      <header className="border-b" role="banner">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Calculator className="w-6 h-6 text-primary" aria-hidden="true" />
-            <span className="font-bold text-lg">PercentageCalculator</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/" className="hover:text-primary transition-colors">Percentage</Link>
-            <Link href="/finance" className="text-primary font-medium">Finance</Link>
-            <Link href="/about" className="hover:text-primary transition-colors">About</Link>
-            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
-          </nav>
-          <ThemeToggle />
-        </div>
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center w-full px-4 py-8 gap-6" role="main">
@@ -46,6 +31,29 @@ export default function FinancePage() {
         </div>
         
         <FinanceCalculator />
+
+        {/* Other Calculators */}
+        <section className="max-w-2xl mx-auto px-4 mt-8" aria-label="Other calculators">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4">Other Professional Calculators</h3>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link 
+                href="/" 
+                className="inline-flex items-center gap-2 bg-muted hover:bg-muted/80 px-4 py-2 rounded-lg transition-colors"
+              >
+                <Calculator className="w-4 h-4" />
+                Percentage Calculator
+              </Link>
+              <Link 
+                href="/real-estate" 
+                className="inline-flex items-center gap-2 bg-muted hover:bg-muted/80 px-4 py-2 rounded-lg transition-colors"
+              >
+                <Home className="w-4 h-4" />
+                Real Estate Calculator
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* SEO Content */}
         <section className="max-w-4xl mx-auto px-4 mt-12" aria-label="Finance Calculator Information">
@@ -61,7 +69,7 @@ export default function FinancePage() {
                   accurate results for compound interest, loan payments, investment returns, and financial planning.
                 </p>
                 <p className="text-muted-foreground">
-                  Whether you're a financial advisor, accountant, investor, or simply planning your personal finances, 
+                  Whether you&apos;re a financial advisor, accountant, investor, or simply planning your personal finances, 
                   our finance calculator offers the tools you need for professional-grade calculations.
                 </p>
               </div>

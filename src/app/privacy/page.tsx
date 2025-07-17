@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Shield, Eye, Lock, Database } from "lucide-react";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Percentage Calculator",
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
@@ -110,6 +112,22 @@ export default function PrivacyPage() {
           </Link>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="w-full border-t mt-auto" role="contentinfo">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <nav className="flex gap-4 text-sm text-muted-foreground" aria-label="Footer navigation">
+              <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
+              <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
+              <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+            </nav>
+            <div className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Free percentage calculator
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 } 
