@@ -13,6 +13,12 @@ export default function Home() {
             <Calculator className="w-6 h-6 text-primary" aria-hidden="true" />
             <span className="font-bold text-lg">PercentageCalculator</span>
           </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <Link href="/" className="text-primary font-medium">Percentage</Link>
+            <Link href="/finance" className="hover:text-primary transition-colors">Finance</Link>
+            <Link href="/about" className="hover:text-primary transition-colors">About</Link>
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+          </nav>
           <ThemeToggle />
         </div>
       </header>
