@@ -16,91 +16,37 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       <main className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">About Me & This Calculator</h1>
-          <p className="text-xl text-muted-foreground">
-            Hi there! Let me tell you a bit about myself and why I built this tool.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div>
-            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-              <Calculator className="w-6 h-6" />
-              Why I Built This
-            </h2>
-            <p className="text-muted-foreground mb-4">
-              I&apos;m a developer who got frustrated with existing percentage calculators. 
-              They were either cluttered with ads, required accounts, or just didn&apos;t work well. 
-              So I decided to build my own - the calculator I always wanted to use.
-            </p>
-            <p className="text-muted-foreground">
-              My philosophy is simple: useful tools should be free, fast, and respect your privacy. 
-              That&apos;s why everything runs locally in your browser - I literally can&apos;t see what you&apos;re calculating, 
-              even if I wanted to (which I don&apos;t).
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-              <Code className="w-6 h-6" />
-              How I Built It
-            </h2>
-            <p className="text-muted-foreground mb-4">
-              I used Next.js 14, TypeScript, and TailwindCSS to create something that&apos;s both 
-              beautiful and functional. The dark mode toggle? That&apos;s because I&apos;m a night owl 
-              and hate bright screens at 2 AM.
-            </p>
-            <p className="text-muted-foreground">
-              Every feature I added is something I actually use. The history? Because I always forget 
-              what I calculated 5 minutes ago. The export? Because sometimes you need to share results 
-              with colleagues.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="text-center p-6 rounded-lg bg-muted/50">
-            <Zap className="w-12 h-12 mx-auto mb-4 text-primary" />
-            <h3 className="text-lg font-semibold mb-2">Lightning Fast</h3>
-            <p className="text-sm text-muted-foreground">
-              I optimized every calculation to be instant. No waiting, no loading spinners.
-            </p>
-          </div>
-          <div className="text-center p-6 rounded-lg bg-muted/50">
-            <Shield className="w-12 h-12 mx-auto mb-4 text-primary" />
-            <h3 className="text-lg font-semibold mb-2">100% Private</h3>
-            <p className="text-sm text-muted-foreground">
-              Your data never leaves your device. I built it this way because that&apos;s how I want my tools to work.
-            </p>
-          </div>
-          <div className="text-center p-6 rounded-lg bg-muted/50">
-            <Clock className="w-12 h-12 mx-auto mb-4 text-primary" />
-            <h3 className="text-lg font-semibold mb-2">Smart History</h3>
-            <p className="text-sm text-muted-foreground">
-              Tracks your calculations locally so you can reference them later. Export when you need to.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-muted/50 p-8 rounded-lg mb-12">
-          <h2 className="text-2xl font-semibold mb-4">My Promise to You</h2>
-          <p className="text-muted-foreground mb-4">
-            I built this calculator to be genuinely useful, not to collect data or show ads. 
-            It&apos;s completely free and always will be. If you find it helpful, that&apos;s all the 
-            reward I need.
-          </p>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold mb-3">About This Calculator</h1>
           <p className="text-muted-foreground">
-            Have suggestions or found a bug? I&apos;d love to hear from you! I&apos;m always looking 
-            to improve the tool based on real user feedback.
+            A simple, fast percentage calculator built for everyday use.
           </p>
         </div>
 
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Ready to Try It Out?</h2>
+        <div className="max-w-2xl mx-auto text-center">
           <p className="text-muted-foreground mb-6">
-            Give my calculator a spin - I think you&apos;ll like it!
+            I built this calculator because I needed a quick way to calculate percentages without ads or tracking. 
+            Everything runs in your browser - no data is sent anywhere.
           </p>
+          
+          <div className="grid md:grid-cols-3 gap-4 mb-8">
+            <div className="text-center p-4 rounded-lg bg-muted/50">
+              <Zap className="w-8 h-8 mx-auto mb-2 text-primary" />
+              <h3 className="font-semibold mb-1">Fast</h3>
+              <p className="text-xs text-muted-foreground">Instant calculations</p>
+            </div>
+            <div className="text-center p-4 rounded-lg bg-muted/50">
+              <Shield className="w-8 h-8 mx-auto mb-2 text-primary" />
+              <h3 className="font-semibold mb-1">Private</h3>
+              <p className="text-xs text-muted-foreground">No data collection</p>
+            </div>
+            <div className="text-center p-4 rounded-lg bg-muted/50">
+              <Clock className="w-8 h-8 mx-auto mb-2 text-primary" />
+              <h3 className="font-semibold mb-1">Smart</h3>
+              <p className="text-xs text-muted-foreground">History tracking</p>
+            </div>
+          </div>
+
           <Link 
             href="/" 
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
@@ -108,6 +54,95 @@ export default function AboutPage() {
             <Calculator className="w-5 h-5" />
             Start Calculating
           </Link>
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6 text-center">Advanced Percentage Calculator Features</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Percentage Calculation Types</h3>
+              <div className="space-y-3 text-sm">
+                <div className="p-3 bg-muted/30 rounded">
+                  <strong>Basic Percentage:</strong> Calculate what is X% of Y
+                </div>
+                <div className="p-3 bg-muted/30 rounded">
+                  <strong>Reverse Percentage:</strong> Find what percent X is of Y
+                </div>
+                <div className="p-3 bg-muted/30 rounded">
+                  <strong>Percentage Change:</strong> Calculate increase/decrease from A to B
+                </div>
+                <div className="p-3 bg-muted/30 rounded">
+                  <strong>Markup Calculator:</strong> Add percentage markup to prices
+                </div>
+                <div className="p-3 bg-muted/30 rounded">
+                  <strong>Discount Calculator:</strong> Calculate final price after discount
+                </div>
+                <div className="p-3 bg-muted/30 rounded">
+                  <strong>Compound Interest:</strong> Calculate interest over time
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Use Cases & Applications</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Financial Planning:</strong> Investment returns, loan calculations, and budget planning</li>
+                <li><strong>Business Operations:</strong> Profit margins, pricing strategies, and cost analysis</li>
+                <li><strong>Retail & E-commerce:</strong> Discount calculations, sales promotions, and pricing</li>
+                <li><strong>Real Estate:</strong> Property appreciation, commission calculations, and market analysis</li>
+                <li><strong>Education:</strong> Grade calculations, statistical analysis, and academic research</li>
+                <li><strong>Personal Finance:</strong> Tax calculations, tip amounts, and expense tracking</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-muted/50 p-6 rounded-lg mb-8">
+            <h3 className="text-xl font-semibold mb-4">Why Our Percentage Calculator Stands Out</h3>
+            <div className="grid md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <h4 className="font-semibold mb-2">Accuracy & Precision</h4>
+                <p className="text-muted-foreground">Advanced algorithms ensure precise calculations with customizable decimal places for professional results.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">User Experience</h4>
+                <p className="text-muted-foreground">Intuitive interface with keyboard shortcuts, history tracking, and mobile-responsive design for seamless usage.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">Privacy & Security</h4>
+                <p className="text-muted-foreground">All calculations performed locally in your browser with no data transmission or storage on external servers.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-muted/50 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">Calculator Features</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <h4 className="font-semibold mb-2">Calculation Types</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Basic percentage calculations</li>
+                  <li>• Reverse percentage finding</li>
+                  <li>• Percentage change analysis</li>
+                  <li>• Markup and discount calculations</li>
+                  <li>• Compound interest over time</li>
+                  <li>• Financial ratio calculations</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">User Experience</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Instant calculation results</li>
+                  <li>• Calculation history tracking</li>
+                  <li>• Export and share functionality</li>
+                  <li>• Dark mode support</li>
+                  <li>• Mobile-responsive design</li>
+                  <li>• Keyboard shortcuts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>

@@ -1,51 +1,39 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalculationResult } from "@/lib/percentageUtils";
-import { Calculator, Info } from "lucide-react";
+import { type CalculationResult } from "@/lib/percentageUtils";
 
 interface ResultCardProps {
   result: CalculationResult;
-  precision?: number;
+  precision: number;
 }
 
-export default function ResultCard({ result, precision = 2 }: ResultCardProps) {
-  const formattedResult = Number(result.result.toFixed(precision)).toLocaleString();
-  
+export default function ResultCard({ result, precision }: ResultCardProps) {
+  const formattedResult = typeof result.result === 'number' 
+    ? result.result.toFixed(precision)
+    : result.result;
+
   return (
-    <Card className="bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-700">
+    <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950/20">
       <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-2 text-lg">
-          <Calculator className="w-5 h-5" />
-          Calculation Result
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        {/* Main Result */}
-        <div className="flex flex-col items-center">
-          <Badge className="text-xl px-6 py-3 bg-green-600 text-white font-mono" variant="default">
+        <CardTitle className="text-lg flex items-center gap-2">
+          <span className="text-green-600 dark:text-green-400">Result</span>
+          <Badge variant="secondary" className="text-xs">
             {formattedResult}
           </Badge>
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        <div className="text-sm text-muted-foreground">
+          {result.explanation}
         </div>
-
-        {/* Explanation */}
-        {result.explanation && (
-          <div className="text-center text-sm text-muted-foreground">
-            {result.explanation}
-          </div>
-        )}
-
-        {/* Formula */}
         {result.formula && (
-          <div className="bg-muted/50 p-3 rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              <Info className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm font-medium">Formula:</span>
-            </div>
-            <code className="text-sm font-mono bg-background px-2 py-1 rounded">
-              {result.formula}
-            </code>
+          <div className="text-xs font-mono bg-muted p-2 rounded">
+            {result.formula}
           </div>
         )}
+
       </CardContent>
     </Card>
   );

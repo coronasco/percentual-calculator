@@ -28,7 +28,7 @@ import {
   type CalculationResult,
   formatNumber,
 } from "@/lib/percentageUtils";
-import ResultCard from "./ResultCard";
+import ResultCard from "@/components/ResultCard";
 import {
   Calculator,
   Percent,
