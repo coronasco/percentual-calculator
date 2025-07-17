@@ -1,7 +1,7 @@
 import PercentageForm from "@/components/PercentageForm";
 import { Header } from "@/components/Header";
 import Link from "next/link";
-import { Calculator, Home as HomeIcon, DollarSign } from "lucide-react";
+import { Home as HomeIcon, DollarSign } from "lucide-react";
 
 export default function Home() {
   return (
