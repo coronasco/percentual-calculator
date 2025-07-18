@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { Calculator, DollarSign, Home, BookOpen, ArrowRight, Percent, TrendingUp, Clock } from "lucide-react";
+import { Calculator, DollarSign, Home, BookOpen, ArrowRight, Percent, TrendingUp, Clock, Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Calculator Guides - Learn How to Use Our Professional Tools",
@@ -215,6 +215,162 @@ export default function GuidesPage() {
               </div>
             </div>
           </div>
+
+          {/* Compound Interest Calculator Guide */}
+          <div className="border rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <TrendingUp className="w-8 h-8 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-2">Compound Interest Calculator Guide</h2>
+                <p className="text-muted-foreground mb-4">
+                  Master compound interest calculations for investment planning, retirement savings, and long-term wealth building. Learn how money grows exponentially over time with different compounding frequencies.
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <h3 className="font-semibold mb-2">What You&apos;ll Learn:</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Compound interest formulas</li>
+                      <li>• Compounding frequency effects</li>
+                      <li>• Investment growth projections</li>
+                      <li>• Retirement planning strategies</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Perfect For:</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Investors and traders</li>
+                      <li>• Retirement planning</li>
+                      <li>• Financial advisors</li>
+                      <li>• Long-term savers</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Link 
+                    href="/guides/compound-interest-calculator" 
+                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    Read Guide
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link 
+                    href="/compound-interest" 
+                    className="inline-flex items-center gap-2 bg-muted hover:bg-muted/80 px-4 py-2 rounded-lg transition-colors"
+                  >
+                    <Calculator className="w-4 h-4" />
+                    Try Calculator
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Education Calculator Guide */}
+          <div className="border rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <BookOpen className="w-8 h-8 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-2">Education Calculator Guide</h2>
+                <p className="text-muted-foreground mb-4">
+                  Master academic calculations including grade calculations, GPA computation, and academic performance tracking. Essential for students, teachers, and academic planning.
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <h3 className="font-semibold mb-2">What You&apos;ll Learn:</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Grade calculation formulas</li>
+                      <li>• GPA computation methods</li>
+                      <li>• Weighted grading systems</li>
+                      <li>• Academic planning strategies</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Perfect For:</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Students and learners</li>
+                      <li>• Teachers and educators</li>
+                      <li>• Academic advisors</li>
+                      <li>• Parents and guardians</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Link 
+                    href="/guides/education-calculator" 
+                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    Read Guide
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link 
+                    href="/education" 
+                    className="inline-flex items-center gap-2 bg-muted hover:bg-muted/80 px-4 py-2 rounded-lg transition-colors"
+                  >
+                    <Calculator className="w-4 h-4" />
+                    Try Calculator
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Freelance Calculator Guide */}
+          <div className="border rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Briefcase className="w-8 h-8 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-2">Freelance Calculator Guide</h2>
+                <p className="text-muted-foreground mb-4">
+                  Master freelance pricing and project estimation. Learn how to calculate hourly rates, project costs, profitability, and taxes for freelancers and contractors.
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <h3 className="font-semibold mb-2">What You&apos;ll Learn:</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Hourly rate calculation methods</li>
+                      <li>• Project cost estimation</li>
+                      <li>• Profitability analysis</li>
+                      <li>• Tax planning for freelancers</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Perfect For:</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Freelancers and contractors</li>
+                      <li>• Digital nomads</li>
+                      <li>• Small business owners</li>
+                      <li>• Independent consultants</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Link 
+                    href="/guides/freelance-calculator" 
+                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    Read Guide
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link 
+                    href="/freelance" 
+                    className="inline-flex items-center gap-2 bg-muted hover:bg-muted/80 px-4 py-2 rounded-lg transition-colors"
+                  >
+                    <Calculator className="w-4 h-4" />
+                    Try Calculator
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}
@@ -244,6 +400,13 @@ export default function GuidesPage() {
             >
               <Home className="w-5 h-5" />
               Real Estate Guide
+            </Link>
+            <Link 
+              href="/guides/compound-interest-calculator" 
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              <TrendingUp className="w-5 h-5" />
+              Compound Interest Guide
             </Link>
           </div>
         </section>
