@@ -16,7 +16,4 @@ Allow: /manifest.json
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://www.advanced-percentage-calculator.com/sitemap.xml
-
-# Additional sitemaps for different content types
-Sitemap: https://www.advanced-percentage-calculator.com/sitemap-calculators.xml 
+Sitemap: https://www.advanced-percentage-calculator.com/sitemap.xml 
