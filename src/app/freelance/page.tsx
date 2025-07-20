@@ -28,80 +28,57 @@ export default function FreelancePage() {
         <FreelanceCalculator />
 
         {/* SEO Content */}
-        <section className="max-w-4xl mx-auto mt-12 prose prose-gray dark:prose-invert max-w-none">
-          <h2 className="text-2xl font-bold mb-6 text-center">Freelance Calculator</h2>
+        <section className="max-w-4xl mx-auto mt-12 prose prose-gray dark:prose-invert ">
+          <h2 className="text-2xl font-bold mb-6 text-center">Comprehensive Freelance Calculator for Professional Success</h2>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Hourly Rate Calculator</h3>
-              <p className="text-muted-foreground mb-4">
-                Calculate your optimal hourly rate based on your expenses, desired profit, and work schedule. 
-                This ensures you cover all costs and achieve your financial goals while remaining competitive.
-              </p>
-              <p className="text-muted-foreground">
-                Our calculator considers both personal and business expenses, tax implications, and your target profit 
-                to determine the minimum hourly rate you should charge.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Project Cost Estimator</h3>
-              <p className="text-muted-foreground mb-4">
-                Estimate project costs accurately by combining your hourly rate with additional expenses, 
-                discounts, and taxes. Perfect for creating professional quotes and proposals.
-              </p>
-              <p className="text-muted-foreground">
-                The project calculator helps you account for all costs including software licenses, 
-                hosting fees, and other project-specific expenses.
-              </p>
-            </div>
-          </div>
+          <p className="text-muted-foreground mb-6">
+            Navigating the freelance economy requires sophisticated financial planning and precise pricing strategies. Our comprehensive freelance calculator serves as your strategic business companion, offering advanced rate computation and project cost analysis that adapts to various industries and business models. Whether you&apos;re a seasoned contractor or embarking on your freelance journey, this tool provides the analytical precision needed for sustainable business growth.
+          </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Profitability Analysis</h3>
+              <h3 className="text-xl font-semibold mb-4">Strategic Hourly Rate Determination</h3>
               <p className="text-muted-foreground mb-4">
-                Analyze your business profitability by comparing revenue against expenses. 
-                Track profit margins and identify your break-even point for better financial planning.
+                Establishing competitive yet profitable hourly rates represents one of the most critical decisions in freelance business management. Our hourly rate calculator transcends basic arithmetic by incorporating comprehensive cost analysis, market positioning strategies, and profit optimization algorithms. This sophisticated approach ensures that freelancers can accurately determine rates that reflect their expertise while maintaining market competitiveness.
               </p>
               <p className="text-muted-foreground">
-                Understanding your profitability helps you make informed decisions about pricing, 
-                expenses, and business growth strategies.
+                The system accommodates diverse business structures, from solo practitioners managing personal expenses to established contractors with complex overhead requirements. This flexibility enables freelancers to project sustainable income levels and make informed decisions about business expansion and service diversification.
               </p>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Tax Calculator</h3>
+              <h3 className="text-xl font-semibold mb-4">Advanced Project Cost Analysis</h3>
               <p className="text-muted-foreground mb-4">
-                Calculate estimated taxes for freelancers and contractors. Account for business expenses 
-                and understand your effective tax rate for better financial planning.
+                Project cost estimation represents more than simple time-and-materials calculations—it embodies the complete financial narrative of service delivery. Our project cost calculator employs industry-standard methodologies that process multiple cost components, various pricing models, and different tax implications to deliver accurate project profitability metrics. This tool becomes particularly valuable for freelancers managing complex projects, multiple clients, or diverse service portfolios.
               </p>
               <p className="text-muted-foreground">
-                The tax calculator helps you set aside the right amount for taxes and understand 
-                your true after-tax income.
+                The calculator&apos;s sophisticated architecture supports both fixed-price and hourly billing models, enabling freelancers to compare different pricing strategies and optimize their revenue streams. This analytical perspective proves invaluable for identifying profitable project types, setting competitive pricing, and maintaining the financial health required in today&apos;s competitive freelance marketplace.
               </p>
             </div>
           </div>
 
           <div className="bg-muted/50 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-semibold mb-4">How to Use Our Freelance Calculator</h3>
+            <h3 className="text-xl font-semibold mb-4">Comprehensive Business Planning Framework</h3>
+            <p className="text-muted-foreground mb-4">
+              Effective freelance business planning extends beyond simple rate calculations—it requires a comprehensive understanding of how individual project decisions contribute to broader business objectives. Our freelance calculator facilitates this strategic approach by providing detailed breakdowns of cost components, profit margin analysis, and revenue projections that enable informed decision-making throughout the business lifecycle.
+            </p>
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div>
-                <h4 className="font-semibold mb-2">Hourly Rate Calculator</h4>
+                <h4 className="font-semibold mb-2">Rate Calculation Methodology</h4>
                 <ol className="space-y-1 text-muted-foreground">
-                  <li>1. Enter your monthly personal expenses</li>
-                  <li>2. Add your business expenses</li>
-                  <li>3. Set your work schedule and desired profit</li>
-                  <li>4. View your recommended hourly rate</li>
+                  <li>1. Input comprehensive expense categories and amounts</li>
+                  <li>2. Configure work schedule and availability parameters</li>
+                  <li>3. Establish profit targets and business growth objectives</li>
+                  <li>4. Generate optimized rate recommendations and analysis</li>
                 </ol>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Project Cost Calculator</h4>
+                <h4 className="font-semibold mb-2">Project Estimation Protocol</h4>
                 <ol className="space-y-1 text-muted-foreground">
-                  <li>1. Add project details and estimated hours</li>
-                  <li>2. Include additional costs and discounts</li>
-                  <li>3. See detailed cost breakdown</li>
-                  <li>4. Get final project price with taxes</li>
+                  <li>1. Define project scope and resource requirements</li>
+                  <li>2. Calculate direct and indirect cost components</li>
+                  <li>3. Apply appropriate markup and profit margins</li>
+                  <li>4. Review comprehensive project profitability metrics</li>
                 </ol>
               </div>
             </div>
@@ -109,44 +86,41 @@ export default function FreelancePage() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Hourly Rate Calculation Examples</h3>
+              <h3 className="text-xl font-semibold mb-4">Practical Business Scenarios</h3>
               <div className="space-y-3 text-sm">
                 <div className="p-3 bg-muted/30 rounded">
-                  <strong>Example Freelancer:</strong><br/>
-                  <span className="text-muted-foreground">Monthly Expenses: $3,500</span><br/>
-                  <span className="text-muted-foreground">Business Expenses: $800</span><br/>
-                  <span className="text-muted-foreground">Desired Profit: $2,000</span><br/>
-                  <span className="text-muted-foreground">Work Schedule: 20 days × 8 hours</span><br/>
-                  <span className="text-muted-foreground"><strong>Recommended Rate: $52.50/hour</strong></span>
+                  <strong>Comprehensive Rate Analysis:</strong><br/>
+                  <span className="text-muted-foreground">Monthly Living Expenses: $4,200</span><br/>
+                  <span className="text-muted-foreground">Business Overhead: $1,500</span><br/>
+                  <span className="text-muted-foreground">Target Profit: $3,000</span><br/>
+                  <span className="text-muted-foreground">Billable Hours: 160/month</span><br/>
+                  <span className="text-muted-foreground"><strong>Optimal Rate: $54.38/hour</strong></span>
                 </div>
                 <div className="p-3 bg-muted/30 rounded">
-                  <strong>Factors Affecting Rate:</strong><br/>
-                  <span className="text-muted-foreground">• Cost of living in your area</span><br/>
-                  <span className="text-muted-foreground">• Industry standards and competition</span><br/>
-                  <span className="text-muted-foreground">• Your experience and expertise</span><br/>
-                  <span className="text-muted-foreground">• Project complexity and value</span>
+                  <strong>Multi-Project Portfolio:</strong><br/>
+                  <span className="text-muted-foreground">Web Development: $75/hour</span><br/>
+                  <span className="text-muted-foreground">Consulting: $120/hour</span><br/>
+                  <span className="text-muted-foreground">Content Creation: $45/hour</span><br/>
+                  <span className="text-muted-foreground">Average Rate: $80/hour</span>
                 </div>
               </div>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Project Cost Examples</h3>
+              <h3 className="text-xl font-semibold mb-4">Industry Pricing Standards</h3>
               <div className="space-y-3 text-sm">
                 <div className="p-3 bg-muted/30 rounded">
-                  <strong>Website Development Project:</strong><br/>
-                  <span className="text-muted-foreground">Hours: 40 @ $50/hour = $2,000</span><br/>
-                  <span className="text-muted-foreground">Additional Costs: $300 (hosting, domain)</span><br/>
-                  <span className="text-muted-foreground">Subtotal: $2,300</span><br/>
-                  <span className="text-muted-foreground">Tax (25%): $575</span><br/>
-                  <span className="text-muted-foreground"><strong>Total: $2,875</strong></span>
+                  <strong>Market Rate Benchmarks:</strong><br/>
+                  <span className="text-muted-foreground">Web Development: $50-150/hour</span><br/>
+                  <span className="text-muted-foreground">Graphic Design: $25-100/hour</span><br/>
+                  <span className="text-muted-foreground">Content Writing: $20-80/hour</span><br/>
+                  <span className="text-muted-foreground">Consulting: $75-300/hour</span>
                 </div>
                 <div className="p-3 bg-muted/30 rounded">
-                  <strong>Logo Design Project:</strong><br/>
-                  <span className="text-muted-foreground">Hours: 8 @ $50/hour = $400</span><br/>
-                  <span className="text-muted-foreground">Additional Costs: $50 (stock assets)</span><br/>
-                  <span className="text-muted-foreground">Subtotal: $450</span><br/>
-                  <span className="text-muted-foreground">Tax (25%): $112.50</span><br/>
-                  <span className="text-muted-foreground"><strong>Total: $562.50</strong></span>
+                  <strong>Experience-Based Pricing:</strong><br/>
+                  <span className="text-muted-foreground">Entry Level: 60-80% of market rate</span><br/>
+                  <span className="text-muted-foreground">Mid-Level: 80-120% of market rate</span><br/>
+                  <span className="text-muted-foreground">Expert Level: 120-200% of market rate</span>
                 </div>
               </div>
             </div>
@@ -154,53 +128,56 @@ export default function FreelancePage() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Business Benefits</h3>
+              <h3 className="text-xl font-semibold mb-4">Strategic Business Applications</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><strong>Accurate Pricing:</strong> Set rates that cover all costs and ensure profitability</li>
-                <li><strong>Professional Quotes:</strong> Create detailed, transparent project estimates</li>
-                <li><strong>Financial Planning:</strong> Understand your true income and expenses</li>
-                <li><strong>Tax Preparation:</strong> Plan for tax obligations and avoid surprises</li>
-                <li><strong>Competitive Analysis:</strong> Compare your rates with market standards</li>
-                <li><strong>Growth Planning:</strong> Identify opportunities to increase profitability</li>
+                <li><strong>Market Positioning:</strong> Analyze competitive landscape and position services appropriately</li>
+                <li><strong>Profit Optimization:</strong> Identify opportunities to increase margins and revenue streams</li>
+                <li><strong>Client Segmentation:</strong> Develop pricing strategies for different client types and project sizes</li>
+                <li><strong>Service Diversification:</strong> Evaluate profitability of new service offerings and market expansion</li>
+                <li><strong>Financial Planning:</strong> Project cash flow and plan for business growth and investment</li>
+                <li><strong>Tax Strategy:</strong> Optimize business structure and expense management for tax efficiency</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Features for Freelancers</h3>
+              <h3 className="text-xl font-semibold mb-4">Advanced Freelance Features</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><strong>Expense Tracking:</strong> Separate personal and business expenses</li>
-                <li><strong>Flexible Scheduling:</strong> Adjust work days and hours as needed</li>
-                <li><strong>Tax Considerations:</strong> Account for tax rates in calculations</li>
-                <li><strong>Project Management:</strong> Track multiple projects simultaneously</li>
-                <li><strong>Profit Analysis:</strong> Monitor margins and break-even points</li>
-                <li><strong>Export Results:</strong> Save and share calculations with clients</li>
+                <li><strong>Multi-Service Pricing:</strong> Support for diverse service portfolios and pricing models</li>
+                <li><strong>Client Profitability Analysis:</strong> Track profitability across different client relationships</li>
+                <li><strong>Real-Time Calculation Updates:</strong> Instant results with dynamic cost adjustments</li>
+                <li><strong>Expense Categorization:</strong> Detailed breakdown of business and personal expense components</li>
+                <li><strong>Project Comparison Tools:</strong> Compare profitability across different project types and clients</li>
+                <li><strong>Cross-Platform Integration:</strong> Seamless operation across all business management systems</li>
               </ul>
             </div>
           </div>
 
           <div className="bg-muted/50 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">Why Choose Our Freelance Calculator?</h3>
+            <h3 className="text-xl font-semibold mb-4">Comprehensive Freelance Business Support System</h3>
+            <p className="text-muted-foreground mb-4">
+              Our freelance calculator represents more than a simple computational tool—it serves as a comprehensive business support system designed to enhance financial outcomes and facilitate informed decision-making throughout the freelance journey. Whether you&apos;re a freelancer navigating complex pricing decisions, a contractor seeking to optimize project profitability, or a business consultant supporting client success, this tool provides the precision and reliability needed for effective business planning.
+            </p>
             <div className="grid md:grid-cols-2 gap-6 text-sm">
               <div>
-                <h4 className="font-semibold mb-2">For New Freelancers</h4>
+                <h4 className="font-semibold mb-2">Freelancer Empowerment Features</h4>
                 <ul className="space-y-1 text-muted-foreground">
-                  <li>• Set competitive rates from the start</li>
-                  <li>• Understand all business costs</li>
-                  <li>• Plan for taxes and expenses</li>
-                  <li>• Create professional proposals</li>
-                  <li>• Track profitability over time</li>
-                  <li>• Build sustainable pricing strategies</li>
+                  <li>• Establish competitive yet profitable pricing strategies</li>
+                  <li>• Analyze project profitability and client relationships</li>
+                  <li>• Plan sustainable business growth and expansion</li>
+                  <li>• Optimize expense management and tax efficiency</li>
+                  <li>• Develop comprehensive financial projections and budgets</li>
+                  <li>• Track performance metrics and business health indicators</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">For Experienced Freelancers</h4>
+                <h4 className="font-semibold mb-2">Business Professional Support</h4>
                 <ul className="space-y-1 text-muted-foreground">
-                  <li>• Optimize existing pricing</li>
-                  <li>• Analyze project profitability</li>
-                  <li>• Plan for business growth</li>
-                  <li>• Prepare for tax season</li>
-                  <li>• Benchmark against market rates</li>
-                  <li>• Streamline project estimation</li>
+                  <li>• Verify pricing accuracy and market competitiveness</li>
+                  <li>• Support client understanding of project cost structures</li>
+                  <li>• Plan effective service delivery and resource allocation</li>
+                  <li>• Demonstrate pricing transparency and value proposition</li>
+                  <li>• Facilitate comprehensive business planning sessions</li>
+                  <li>• Analyze market trends and competitive positioning</li>
                 </ul>
               </div>
             </div>
