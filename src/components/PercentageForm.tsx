@@ -45,6 +45,17 @@ import {
   Keyboard,
   Clock,
 } from "lucide-react";
+import {
+  trackCalcSubmit,
+  trackCalcReset,
+  trackCalcTypeChange,
+  trackCopy,
+  trackShare,
+  trackHistoryExport,
+  trackHistoryClear,
+  trackFavoriteToggle,
+  trackPrecisionChange,
+} from "@/lib/analytics";
 
 const options = [
   {
@@ -313,7 +324,7 @@ export default function PercentageForm() {
           >
             {/* Calculation Type Selector */}
             <div className="flex items-center gap-2">
-              <Select value={type} onValueChange={v => setType(v as CalcType)}>
+              <Select value={type} onValueChange={v => { setType(v as CalcType); trackCalcTypeChange('percentage', v); }}>
                 <SelectTrigger className="flex-1" aria-label="Select calculation type">
                   <SelectValue />
                 </SelectTrigger>
@@ -343,13 +354,14 @@ export default function PercentageForm() {
             {/* Input Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="input1" className="sr-only">
+                <label htmlFor="input1" className="text-sm font-medium mb-1 block">
                   {currentOption?.placeholder1}
                 </label>
                 <Input
                   ref={input1Ref}
                   id="input1"
                   type="number"
+                  inputMode="decimal"
                   placeholder={currentOption?.placeholder1}
                   value={input1}
                   onChange={e => setInput1(e.target.value)}
@@ -357,14 +369,16 @@ export default function PercentageForm() {
                   step="any"
                   aria-describedby="input1-help"
                 />
+                <p id="input1-help" className="text-xs text-muted-foreground mt-1">Enter a number. Decimals allowed.</p>
               </div>
               <div>
-                <label htmlFor="input2" className="sr-only">
+                <label htmlFor="input2" className="text-sm font-medium mb-1 block">
                   {currentOption?.placeholder2}
                 </label>
                 <Input
                   id="input2"
                   type="number"
+                  inputMode="decimal"
                   placeholder={currentOption?.placeholder2}
                   value={input2}
                   onChange={e => setInput2(e.target.value)}
@@ -372,18 +386,20 @@ export default function PercentageForm() {
                   step="any"
                   aria-describedby="input2-help"
                 />
+                <p id="input2-help" className="text-xs text-muted-foreground mt-1">Numbers only. No symbols.</p>
               </div>
             </div>
 
             {/* Additional Input for Compound Interest */}
             {type === "compoundInterest" && (
               <div>
-                <label htmlFor="input3" className="sr-only">
-                  Time in years
+                <label htmlFor="input3" className="text-sm font-medium mb-1 block">
+                  Time (years)
                 </label>
                 <Input
                   id="input3"
                   type="number"
+                  inputMode="decimal"
                   placeholder="Time (years)"
                   value={input3}
                   onChange={e => setInput3(e.target.value)}
@@ -391,13 +407,14 @@ export default function PercentageForm() {
                   step="any"
                   aria-describedby="input3-help"
                 />
+                <p id="input3-help" className="text-xs text-muted-foreground mt-1">Enter years, e.g., 3 or 3.5.</p>
               </div>
             )}
 
             {/* Precision Control */}
             <div className="flex items-center gap-4">
               <label htmlFor="precision" className="text-sm font-medium">Decimal places:</label>
-              <Select value={precision.toString()} onValueChange={v => setPrecision(parseInt(v))}>
+              <Select value={precision.toString()} onValueChange={v => { const p = parseInt(v); setPrecision(p); trackPrecisionChange('percentage', p); }}>
                 <SelectTrigger className="w-20" id="precision" aria-label="Select decimal precision">
                   <SelectValue />
                 </SelectTrigger>
@@ -413,11 +430,11 @@ export default function PercentageForm() {
 
             {/* Action Buttons */}
             <div className="flex gap-2 flex-wrap">
-              <Button type="submit" className="flex-1">
+              <Button type="submit" className="flex-1" onClick={() => trackCalcSubmit('percentage', type)}>
                 <Calculator className="w-4 h-4 mr-1" aria-hidden="true" />
                 Calculate
               </Button>
-              <Button type="button" variant="secondary" onClick={reset}>
+              <Button type="button" variant="secondary" onClick={() => { reset(); trackCalcReset('percentage', type); }}>
                 <RefreshCw className="w-4 h-4 mr-1" aria-hidden="true" />
                 Reset
               </Button>
@@ -432,15 +449,15 @@ export default function PercentageForm() {
 
           {/* Result Display */}
           {result && (
-            <section className="space-y-4" ref={resultRef} aria-label="Calculation result">
+            <section className="space-y-4" ref={resultRef} aria-label="Calculation result" aria-live="polite">
               <ResultCard result={result} precision={precision} />
               <div className="flex gap-2 justify-center flex-wrap">
-                <Button variant="outline" size="sm" onClick={handleCopy} aria-label="Copy result to clipboard">
+                <Button variant="outline" size="sm" onClick={() => { handleCopy(); trackCopy('percentage', type); }} aria-label="Copy result to clipboard">
                   <Copy className="w-4 h-4 mr-1" aria-hidden="true" />
                   {copied ? "Copied!" : "Copy"}
                 </Button>
                 {typeof window !== "undefined" && typeof navigator.share === "function" && (
-                  <Button variant="outline" size="sm" onClick={handleShare} aria-label="Share result">
+                  <Button variant="outline" size="sm" onClick={async () => { await handleShare(); trackShare('percentage', type); }} aria-label="Share result">
                     <Share2 className="w-4 h-4 mr-1" aria-hidden="true" />
                     {shared ? "Shared!" : "Share"}
                   </Button>
@@ -458,11 +475,11 @@ export default function PercentageForm() {
                   Recent Calculations ({history.length})
                 </h3>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" onClick={exportHistory} aria-label="Export calculation history">
+                  <Button variant="outline" size="sm" onClick={() => { exportHistory(); trackHistoryExport('percentage', history.length); }} aria-label="Export calculation history">
                     <Download className="w-4 h-4 mr-1" aria-hidden="true" />
                     Export
                   </Button>
-                  <Button variant="outline" size="sm" onClick={clearHistory} aria-label="Clear calculation history">
+                  <Button variant="outline" size="sm" onClick={() => { clearHistory(); trackHistoryClear('percentage'); }} aria-label="Clear calculation history">
                     <Trash2 className="w-4 h-4 mr-1" aria-hidden="true" />
                     Clear
                   </Button>
@@ -492,7 +509,7 @@ export default function PercentageForm() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => toggleFavorite(item)}
+                      onClick={() => { toggleFavorite(item); trackFavoriteToggle('percentage', item.favorite ? 'remove' : 'add'); }}
                       className="text-muted-foreground hover:text-primary"
                       aria-label={item.favorite ? "Remove from favorites" : "Add to favorites"}
                     >

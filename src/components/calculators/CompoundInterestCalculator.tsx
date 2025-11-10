@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 import { TrendingUp, Copy, Share2 } from "lucide-react";
 import { toast } from "sonner";
+import { trackCalcTypeChange, trackCopy, trackShare } from "@/lib/analytics";
 
 interface CalculationResult {
   principal: number;
@@ -105,6 +106,7 @@ Total Interest: $${result.totalInterest.toLocaleString()}`;
     
     navigator.clipboard.writeText(text);
     toast.success("Result copied to clipboard!");
+    trackCopy('compound_interest', compoundingFrequency);
   };
 
   const shareResult = () => {
@@ -123,6 +125,7 @@ Total Interest: $${result.totalInterest.toLocaleString()}`;
       navigator.clipboard.writeText(`${text}\n${url}`);
       toast.success("Calculation shared to clipboard!");
     }
+    trackShare('compound_interest', compoundingFrequency);
   };
 
 
@@ -173,7 +176,7 @@ Total Interest: $${result.totalInterest.toLocaleString()}`;
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Compounding Frequency</label>
-              <Select value={compoundingFrequency} onValueChange={setCompoundingFrequency}>
+              <Select value={compoundingFrequency} onValueChange={(v) => { setCompoundingFrequency(v); trackCalcTypeChange('compound_interest', v); }}>
                 <SelectTrigger className="text-lg">
                   <SelectValue />
                 </SelectTrigger>

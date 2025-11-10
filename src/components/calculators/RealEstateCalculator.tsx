@@ -20,6 +20,17 @@ import {
 import { toast } from "sonner";
 import ResultCard from "../ResultCard";
 import {
+  trackCalcSubmit,
+  trackCalcReset,
+  trackCalcTypeChange,
+  trackCopy,
+  trackShare,
+  trackHistoryExport,
+  trackHistoryClear,
+  trackFavoriteToggle,
+  trackPrecisionChange,
+} from "@/lib/analytics";
+import {
   Calculator,
   Home,
   TrendingUp,
@@ -397,7 +408,7 @@ export function RealEstateCalculator() {
           >
             {/* Calculation Type Selector */}
             <div className="flex items-center gap-2">
-              <Select value={type} onValueChange={v => setType(v as CalcType)}>
+              <Select value={type} onValueChange={v => { setType(v as CalcType); trackCalcTypeChange('real_estate', v); }}>
                 <SelectTrigger className="flex-1" aria-label="Select calculation type">
                   <SelectValue />
                 </SelectTrigger>
@@ -481,7 +492,7 @@ export function RealEstateCalculator() {
             {/* Precision Control */}
             <div className="flex items-center gap-4">
               <label htmlFor="precision" className="text-sm font-medium">Decimal places:</label>
-              <Select value={precision.toString()} onValueChange={v => setPrecision(parseInt(v))}>
+              <Select value={precision.toString()} onValueChange={v => { const p = parseInt(v); setPrecision(p); trackPrecisionChange('real_estate', p); }}>
                 <SelectTrigger className="w-20" id="precision" aria-label="Select decimal precision">
                   <SelectValue />
                 </SelectTrigger>
@@ -497,11 +508,11 @@ export function RealEstateCalculator() {
 
             {/* Action Buttons */}
             <div className="flex gap-2 flex-wrap">
-              <Button type="submit" className="flex-1">
+              <Button type="submit" className="flex-1" onClick={() => trackCalcSubmit('real_estate', type)}>
                 <Calculator className="w-4 h-4 mr-1" aria-hidden="true" />
                 Calculate
               </Button>
-              <Button type="button" variant="secondary" onClick={reset}>
+              <Button type="button" variant="secondary" onClick={() => { reset(); trackCalcReset('real_estate', type); }}>
                 <RefreshCw className="w-4 h-4 mr-1" aria-hidden="true" />
                 Reset
               </Button>
@@ -519,12 +530,12 @@ export function RealEstateCalculator() {
             <section className="space-y-4" ref={resultRef} aria-label="Calculation result">
               <ResultCard result={result} precision={precision} />
               <div className="flex gap-2 justify-center flex-wrap">
-                <Button variant="outline" size="sm" onClick={handleCopy} aria-label="Copy result to clipboard">
+                <Button variant="outline" size="sm" onClick={() => { handleCopy(); trackCopy('real_estate', type); }} aria-label="Copy result to clipboard">
                   <Copy className="w-4 h-4 mr-1" aria-hidden="true" />
                   {copied ? "Copied!" : "Copy"}
                 </Button>
                 {typeof window !== "undefined" && typeof navigator.share === "function" && (
-                  <Button variant="outline" size="sm" onClick={handleShare} aria-label="Share result">
+                  <Button variant="outline" size="sm" onClick={async () => { await handleShare(); trackShare('real_estate', type); }} aria-label="Share result">
                     <Share2 className="w-4 h-4 mr-1" aria-hidden="true" />
                     {shared ? "Shared!" : "Share"}
                   </Button>
@@ -542,11 +553,11 @@ export function RealEstateCalculator() {
                   Recent Calculations ({history.length})
                 </h3>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" onClick={exportHistory} aria-label="Export calculation history">
+                  <Button variant="outline" size="sm" onClick={() => { exportHistory(); trackHistoryExport('real_estate', history.length); }} aria-label="Export calculation history">
                     <Download className="w-4 h-4 mr-1" aria-hidden="true" />
                     Export
                   </Button>
-                  <Button variant="outline" size="sm" onClick={clearHistory} aria-label="Clear calculation history">
+                  <Button variant="outline" size="sm" onClick={() => { clearHistory(); trackHistoryClear('real_estate'); }} aria-label="Clear calculation history">
                     <Trash2 className="w-4 h-4 mr-1" aria-hidden="true" />
                     Clear
                   </Button>
@@ -576,7 +587,7 @@ export function RealEstateCalculator() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => toggleFavorite(item)}
+                      onClick={() => { toggleFavorite(item); trackFavoriteToggle('real_estate', item.favorite ? 'remove' : 'add'); }}
                       className="text-muted-foreground hover:text-primary"
                       aria-label={item.favorite ? "Remove from favorites" : "Add to favorites"}
                     >

@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TrendingUp, Copy, Share2, Calculator, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { trackCalcTypeChange, trackCopy, trackShare } from "@/lib/analytics";
 
 interface Grade {
   name: string;
@@ -206,7 +207,7 @@ Total Grade Points: ${gpaResult.gradePoints}`;
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+      <Tabs value={activeTab} onValueChange={(v) => { setActiveTab(v); trackCalcTypeChange('education', v); }} className="w-full">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="grade" className="flex items-center gap-2">
             <Calculator className="w-4 h-4" />
@@ -296,10 +297,10 @@ Total Grade Points: ${gpaResult.gradePoints}`;
                 <CardTitle className="flex items-center justify-between">
                   <span>Grade Results</span>
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" onClick={copyGradeResult}>
+                    <Button variant="outline" size="sm" onClick={() => { copyGradeResult(); trackCopy('education', 'grade'); }}>
                       <Copy className="w-4 h-4" />
                     </Button>
-                    <Button variant="outline" size="sm" onClick={shareGradeResult}>
+                    <Button variant="outline" size="sm" onClick={() => { shareGradeResult(); trackShare('education', 'grade'); }}>
                       <Share2 className="w-4 h-4" />
                     </Button>
                   </div>
@@ -419,10 +420,10 @@ Total Grade Points: ${gpaResult.gradePoints}`;
                 <CardTitle className="flex items-center justify-between">
                   <span>GPA Results</span>
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" onClick={copyGPAResult}>
+                    <Button variant="outline" size="sm" onClick={() => { copyGPAResult(); trackCopy('education', 'gpa'); }}>
                       <Copy className="w-4 h-4" />
                     </Button>
-                    <Button variant="outline" size="sm" onClick={shareGPAResult}>
+                    <Button variant="outline" size="sm" onClick={() => { shareGPAResult(); trackShare('education', 'gpa'); }}>
                       <Share2 className="w-4 h-4" />
                     </Button>
                   </div>

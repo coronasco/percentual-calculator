@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DollarSign, Copy, Calculator, TrendingUp, Clock, Receipt, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { trackCalcTypeChange, trackCopy } from "@/lib/analytics";
 
 interface Expense {
   name: string;
@@ -228,6 +229,7 @@ Based on ${workDays} work days × ${hoursPerDay} hours/day = ${workDays * hoursP
     
     navigator.clipboard.writeText(text);
     toast.success("Hourly rate copied to clipboard!");
+    trackCopy('freelance', 'hourly');
   };
 
   const copyProjectResults = () => {
@@ -238,6 +240,7 @@ ${projectResults.map(p => `${p.name}: $${p.finalTotal} (${p.hours}h @ $${hourlyR
     
     navigator.clipboard.writeText(text);
     toast.success("Project estimates copied to clipboard!");
+    trackCopy('freelance', 'project');
   };
 
   const copyProfitability = () => {
@@ -251,6 +254,7 @@ Profit Margin: ${profitabilityResult.profitMargin}%`;
     
     navigator.clipboard.writeText(text);
     toast.success("Profitability analysis copied to clipboard!");
+    trackCopy('freelance', 'profitability');
   };
 
   const copyTaxResults = () => {
@@ -263,13 +267,13 @@ Estimated Tax: $${taxResult.estimatedTax}
 After-Tax Income: $${taxResult.afterTaxIncome}`;
     
     navigator.clipboard.writeText(text);
-    navigator.clipboard.writeText(text);
     toast.success("Tax calculation copied to clipboard!");
+    trackCopy('freelance', 'tax');
   };
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+      <Tabs value={activeTab} onValueChange={(v) => { setActiveTab(v); trackCalcTypeChange('freelance', v); }} className="w-full">
         <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="hourly" className="flex items-center gap-2">
             <DollarSign className="w-4 h-4" />
