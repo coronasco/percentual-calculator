@@ -110,6 +110,9 @@ export function Header() {
           <Link href="/privacy" className={`transition-colors px-3 py-2 rounded-md hover:bg-accent ${isActive('/privacy') ? 'bg-accent text-primary' : ''}`} aria-current={isActive('/privacy') ? 'page' : undefined} onClick={() => trackNavClick('/privacy', 'desktop')}>
             Privacy
           </Link>
+          <Link href="/contact" className={`transition-colors px-3 py-2 rounded-md hover:bg-accent ${isActive('/contact') ? 'bg-accent text-primary' : ''}`} aria-current={isActive('/contact') ? 'page' : undefined} onClick={() => trackNavClick('/contact', 'desktop')}>
+            Contact
+          </Link>
         </nav>
         
         {/* Mobile nav */}
@@ -224,6 +227,14 @@ export function Header() {
                       onClick={()=>{ trackNavClick('/privacy', 'mobile'); setOpen(false); }}
                     >
                       Privacy
+                    </Link>
+                    <Link 
+                      href="/contact" 
+                      className={`flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-accent transition-colors ${isActive('/contact') ? 'bg-accent text-primary' : ''}`} 
+                      aria-current={isActive('/contact') ? 'page' : undefined}
+                      onClick={()=>{ trackNavClick('/contact', 'mobile'); setOpen(false); }}
+                    >
+                      Contact
                     </Link>
                   </div>
                 </div>

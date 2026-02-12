@@ -44,113 +44,131 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SEO Content */}
-        <section className="max-w-4xl mx-auto px-4 mt-12" aria-label="Percentage Calculator Information">
-          <div className="prose prose-gray dark:prose-invert max-w-none">
-            <h2 className="text-2xl font-bold mb-6 text-center">Free Online Percentage Calculator</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">What is a Percentage Calculator?</h3>
-                <p className="text-muted-foreground mb-4">
-                  A percentage calculator is an essential tool for calculating percentages, discounts, markups, and financial ratios. 
-                  Whether you need to calculate sales tax, tip amounts, or investment returns, our free percentage calculator 
-                  provides instant results with precision.
+        {/* Editorial, human-written content */}
+        <section className="max-w-5xl mx-auto px-4 mt-12" aria-label="Percentage Calculator Information">
+          <div className="prose prose-gray dark:prose-invert max-w-none space-y-10">
+            {/* Story + CTA row */}
+            <div className="grid md:grid-cols-3 gap-6 items-start">
+              <div className="md:col-span-2 space-y-4">
+                <h2 className="text-2xl font-bold text-center md:text-left">Why I keep building calculators</h2>
+                <p className="text-muted-foreground">
+                  I once sent a client an invoice with the wrong tax and got the politest “are you sure?” you can imagine. Tomato face.
+                  To avoid doing that again, I started running every discount, tip, rent bump, and quick price check through a calculator I trust.
                 </p>
                 <p className="text-muted-foreground">
-                  Our online percentage calculator supports multiple calculation types including percentage of a number, 
-                  reverse percentage calculations, and percentage change between values.
+                  More oddities kept showing up: loyalty promos stacking strangely, VAT pulled out the wrong way, shipping added before discounts,
+                  and “limited” sales that were mostly optimistic rounding. Each time I tripped, I saved a note and added an example here. It reads like a journal because it is one.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Funniest miss so far: a “35% off” jacket that was really 20% off plus 15% hope from the marketing team. The receipt was a great teacher.
+                </p>
+                <p className="text-muted-foreground">
+                  That habit snowballed: after percentages came finance, real estate, education, freelance rates, each built after a real facepalm. If these stories help you dodge a bad total or at least smile once, they’ve done their job.
                 </p>
               </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Common Percentage Calculations</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li><strong>Discount Calculator:</strong> Calculate final price after percentage discount</li>
-                  <li><strong>Markup Calculator:</strong> Add percentage markup to original price</li>
-                  <li><strong>Percentage Change:</strong> Find increase or decrease between two values</li>
-                  <li><strong>Compound Interest:</strong> Calculate interest over time with compounding</li>
-                  <li><strong>Tip Calculator:</strong> Calculate tip amounts for services</li>
-                  <li><strong>Tax Calculator:</strong> Calculate sales tax and VAT amounts</li>
+              <div className="bg-muted/50 p-5 rounded-xl shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold">Quick way to use it</h3>
+                <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
+                  <li>Pick a mode: percent of number, reverse percent, change %, markup/discount, or compound interest.</li>
+                  <li>Type numbers as you see them; decimals welcome.</li>
+                  <li>Glance at the formula under the result; adjust if it feels off.</li>
+                  <li>Save to history only if you want—data stays in your browser.</li>
+                </ol>
+                <p className="text-xs text-muted-foreground">Shortcut: Tab through fields, hit Enter. No magic, just math.</p>
+              </div>
+            </div>
+
+            {/* Feature cards */}
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="border rounded-xl p-5 shadow-sm bg-background">
+                <h3 className="text-lg font-semibold mb-2">Freelance invoice check</h3>
+                <p className="text-sm text-muted-foreground">
+                  €1,200 + 19% tax − 3% platform fee → €1,385.16 net. If the margin drops under 30%, I renegotiate before typing “sure!”.
+                </p>
+              </div>
+              <div className="border rounded-xl p-5 shadow-sm bg-background">
+                <h3 className="text-lg font-semibold mb-2">Mortgage comparison</h3>
+                <p className="text-sm text-muted-foreground">
+                  $220k at 6.10% vs 5.70%: $56/month apart, ~$16.8k over 25 years. Tiny rates, big lifetime gap.
+                </p>
+              </div>
+              <div className="border rounded-xl p-5 shadow-sm bg-background">
+                <h3 className="text-lg font-semibold mb-2">Discount sanity check</h3>
+                <p className="text-sm text-muted-foreground">
+                  Shelf $55, sale $44 → 20% off, not “up to 35%.” If I wanted more, I wait and keep my wallet closed.
+                </p>
+              </div>
+            </div>
+
+            {/* Steps + formulas row */}
+            <div className="grid md:grid-cols-2 gap-6 items-start">
+              <div className="bg-muted/40 border rounded-xl p-5 space-y-3">
+                <h3 className="text-lg font-semibold">Common mistakes to avoid</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                  <li>Remove VAT right: <code>Total ÷ 1.19</code> for 19% VAT.</li>
+                  <li>Apply discounts before shipping, not after.</li>
+                  <li>Keep rate units aligned (annual with years, monthly with months).</li>
+                  <li>Round at the end, not mid-calculation.</li>
+                </ul>
+              </div>
+              <div className="bg-background border rounded-xl p-5 shadow-sm space-y-2">
+                <h3 className="text-lg font-semibold">Quick formulas I reach for</h3>
+                <div className="grid sm:grid-cols-2 gap-2 text-sm text-muted-foreground">
+                  <div className="bg-muted/30 p-3 rounded">Percent of number: (p × n) ÷ 100</div>
+                  <div className="bg-muted/30 p-3 rounded">What percent is A of B: (A ÷ B) × 100</div>
+                  <div className="bg-muted/30 p-3 rounded">Change %: ((New − Old) ÷ Old) × 100</div>
+                  <div className="bg-muted/30 p-3 rounded">Markup vs margin: Markup = (SP − Cost) ÷ Cost; Margin = (SP − Cost) ÷ SP</div>
+                  <div className="bg-muted/30 p-3 rounded">Compound: Final = Principal × (1 + Rate)<sup>time</sup></div>
+                  <div className="bg-muted/30 p-3 rounded">Strip tax 19%: Price ÷ 1.19</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Use cases + privacy */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-background border rounded-xl p-6 shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold">Who it helps</h3>
+                <p className="text-sm text-muted-foreground">
+                  Students checking grades, freelancers pricing work, small shops testing discounts, friends splitting bills, and anyone who
+                  wants a quick confidence check without opening a spreadsheet.
+                </p>
+              </div>
+              <div className="bg-background border rounded-xl p-6 shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold">Privacy in plain words</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                  <li>History lives in your browser (localStorage). Clearing your cache erases it.</li>
+                  <li>No tracking pixels or pop-ups.</li>
+                  <li>Formulas stay visible so you can double-check the math.</li>
                 </ul>
               </div>
             </div>
 
-            <div className="bg-muted/50 p-6 rounded-lg mb-8">
-              <h3 className="text-xl font-semibold mb-4">How to Use Our Percentage Calculator</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div>
-                  <h4 className="font-semibold mb-2">1. Select Calculation Type</h4>
-                  <p className="text-muted-foreground">Choose from percentage of number, reverse percentage, markup, discount, or compound interest calculations.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">2. Enter Your Values</h4>
-                  <p className="text-muted-foreground">Input the numbers you want to calculate. For compound interest, add the time period in years.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">3. Get Instant Results</h4>
-                  <p className="text-muted-foreground">View your calculation result with formula explanation and save to history for future reference.</p>
-                </div>
-              </div>
+            {/* Mini log */}
+            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
+              <h3 className="text-xl font-semibold mb-2">A week of real calculations</h3>
+              <p className="text-sm text-muted-foreground">
+                Monday: monitor $389 with 12% coupon → $342.32. Tuesday: retainer $1,400 → $1,610 (+15%). Wednesday: “3 for 2” vs 25% off—25% wins.
+                Thursday: add-on bag made a budget flight 18% more. Friday: student loan 6.8% monthly compounding—$50 extra/month shortens payoff. Saturday:
+                uneven dinner bill—percent share kept it fair. Sunday: hosting $49 → $63 (+28.5%) so I downgraded.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Percentage Calculator Examples</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="p-3 bg-muted/30 rounded">
-                    <strong>What is 15% of 200?</strong><br/>
-                    <span className="text-muted-foreground">Answer: 30 (15% × 200 = 30)</span>
-                  </div>
-                  <div className="p-3 bg-muted/30 rounded">
-                    <strong>50 is what percent of 200?</strong><br/>
-                    <span className="text-muted-foreground">Answer: 25% (50 ÷ 200 × 100 = 25%)</span>
-                  </div>
-                  <div className="p-3 bg-muted/30 rounded">
-                    <strong>Price increase from $100 to $120?</strong><br/>
-                    <span className="text-muted-foreground">Answer: 20% increase ((120-100) ÷ 100 × 100 = 20%)</span>
-                  </div>
+            {/* FAQ + author */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold mb-3">Quick FAQs</h3>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div><strong>Is it free?</strong><br />Yes. No sign-up or email capture.</div>
+                  <div><strong>Do you store my numbers?</strong><br />They stay in your browser if you save history. Nothing leaves your device.</div>
+                  <div><strong>Report a mistake?</strong><br />Send the exact inputs on the Contact page and I’ll fix it quickly.</div>
                 </div>
               </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Business & Finance Applications</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><strong>Retail:</strong> Calculate discounts, markups, and profit margins</li>
-                  <li><strong>Finance:</strong> Investment returns, interest rates, and loan calculations</li>
-                  <li><strong>Real Estate:</strong> Property value changes and commission calculations</li>
-                  <li><strong>Taxes:</strong> Sales tax, VAT, and tax rate calculations</li>
-                  <li><strong>Statistics:</strong> Data analysis and percentage distributions</li>
-                  <li><strong>Education:</strong> Grade calculations and academic performance metrics</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-muted/50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">Why Choose Our Free Percentage Calculator?</h3>
-              <div className="grid md:grid-cols-2 gap-6 text-sm">
-                <div>
-                  <h4 className="font-semibold mb-2">Features</h4>
-                  <ul className="space-y-1 text-muted-foreground">
-                    <li>• Multiple calculation types</li>
-                    <li>• Instant results with formulas</li>
-                    <li>• History tracking and export</li>
-                    <li>• Dark mode support</li>
-                    <li>• Mobile-friendly design</li>
-                    <li>• No registration required</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Benefits</h4>
-                  <ul className="space-y-1 text-muted-foreground">
-                    <li>• 100% free to use</li>
-                    <li>• Works offline</li>
-                    <li>• Accurate calculations</li>
-                    <li>• Professional results</li>
-                    <li>• Privacy-focused</li>
-                    <li>• No registration required</li>
-                  </ul>
-                </div>
+              <div className="border rounded-xl p-6 shadow-sm space-y-2">
+                <h3 className="text-xl font-semibold mb-2">About the builder</h3>
+                <p className="text-sm text-muted-foreground">
+                  I’m Daniel, a developer who hates bad math on receipts. I answer feedback fast—usually the same day. If something feels off,
+                  <Link href="/contact" className="underline ml-1">tell me</Link> and I’ll sort it out.
+                </p>
               </div>
             </div>
           </div>
